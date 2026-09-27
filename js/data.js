@@ -20,7 +20,7 @@ const SITE = {
   hero: {
     eyebrow: "Wuhan University · Chen Lab",
     title: "Transforming AI Technologies into Reality",
-    lead: "We conduct frontier research in artificial intelligence and multimedia applications, with our innovative technologies incorporated into international standards and deployed in industry products, serving billions of people.",
+    lead: "We aim to conduct frontier research in artificial intelligence and multimedia applications, with our innovative technologies incorporated into international standards and deployed in industry products, serving billions of people.",
     cta: "Explore Our Research",
     /* Real photo applied: assets/hero-right.jpg (fades into the hero background on the right) */
     image: "assets/hero-right.jpg"
