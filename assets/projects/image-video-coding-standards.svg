@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 600">
+  <!-- Image & Video Coding Standards — U-shaped codec pipeline (centered, elbow arrows):
+       video -> encoder (top) -> bitstream (right) -> decoder (right, below) -> recovered video (bottom-left) -->
+  <rect width="900" height="600" fill="#b6e3f4"/>
+
+  <!-- content scaled slightly to widen top/bottom whitespace -->
+  <g transform="translate(44 28.6) scale(0.902)">
+
+  <defs>
+    <!-- gear (codec engine) -->
+    <g id="gear">
+      <g fill="#262e33">
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(45)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(90)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(135)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(180)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(225)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(270)"/>
+        <rect x="-4.5" y="-30" width="9" height="12" rx="4" transform="rotate(315)"/>
+      </g>
+      <circle r="19" fill="#262e33"/>
+      <circle r="8" fill="#ffffff"/>
+    </g>
+  </defs>
+
+  <!-- ── top row: input video -> encoder ── -->
+
+  <!-- input video: frame stack -->
+  <g>
+    <rect x="160" y="57" width="230" height="155" rx="20" fill="#ffffff" opacity="0.55"/>
+    <rect x="130" y="75" width="230" height="155" rx="20" fill="#ffffff" stroke="#262e33" stroke-width="9"/>
+    <circle cx="315" cy="110" r="14" fill="#ffd76e" stroke="#262e33" stroke-width="6"/>
+    <path d="M144 212 L 192 146 L 240 212 Z" fill="#58c9b9" stroke="#262e33" stroke-width="6"/>
+    <path d="M250 212 L 284 170 L 306 212 Z" fill="#c0aede" stroke="#262e33" stroke-width="6"/>
+    <rect x="144" y="212" width="152" height="8" rx="4" fill="#b6e3f4"/>
+    <path d="M203 136 L 229 153 L 203 170 Z" fill="#262e33"/>
+  </g>
+
+  <g stroke="#262e33" stroke-width="8" stroke-linecap="round" fill="none">
+    <line x1="375" y1="152" x2="565" y2="152"/>
+  </g>
+  <path d="M565 140 L 585 152 L 565 164 Z" fill="#262e33"/>
+
+  <!-- encoder -->
+  <g>
+    <rect x="610" y="75" width="160" height="155" rx="26" fill="#ffd76e" stroke="#262e33" stroke-width="9"/>
+    <use href="#gear" xlink:href="#gear" transform="translate(690 125)"/>
+    <g stroke="#262e33" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="660" y1="175" x2="720" y2="175"/>
+      <line x1="670" y1="189" x2="710" y2="189"/>
+    </g>
+  </g>
+
+  <!-- ── elbow arrow: encoder down, then left into bitstream ── -->
+  <path d="M690 230 L 690 244 L 555 244 L 555 250" stroke="#262e33" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M545 250 L 555 262 L 565 250 Z" fill="#262e33"/>
+
+  <!-- binary bitstream -->
+  <g>
+    <rect x="475" y="262" width="160" height="84" rx="22" fill="#262e33"/>
+    <g font-family="Courier New, monospace" font-size="25" font-weight="bold" text-anchor="middle" fill="#ffffff">
+      <text x="555" y="297">1011</text>
+      <text x="555" y="331">0100</text>
+    </g>
+    <circle cx="625" cy="266" r="9" fill="#58c9b9" stroke="#262e33" stroke-width="4"/>
+  </g>
+
+  <!-- ── elbow arrow: bitstream down, then right into decoder ── -->
+  <path d="M555 346 L 555 360 L 690 360 L 690 366" stroke="#262e33" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M679 366 L 690 378 L 701 366 Z" fill="#262e33"/>
+
+  <!-- decoder -->
+  <g>
+    <rect x="610" y="378" width="160" height="155" rx="26" fill="#ffdfbf" stroke="#262e33" stroke-width="9"/>
+    <use href="#gear" xlink:href="#gear" transform="translate(690 428)"/>
+    <g stroke="#262e33" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="660" y1="478" x2="720" y2="478"/>
+      <line x1="670" y1="492" x2="710" y2="492"/>
+    </g>
+  </g>
+
+  <!-- ── bottom row: decoder -> recovered video (right to left) ── -->
+  <g stroke="#262e33" stroke-width="8" stroke-linecap="round" fill="none">
+    <line x1="600" y1="454" x2="405" y2="454"/>
+  </g>
+  <path d="M405 442 L 385 454 L 405 466 Z" fill="#262e33"/>
+
+  <!-- decoded / recovered video -->
+  <g>
+    <rect x="130" y="378" width="230" height="155" rx="20" fill="#ffffff" stroke="#262e33" stroke-width="9" stroke-dasharray="18 12"/>
+    <circle cx="315" cy="412" r="14" fill="#ffd76e" stroke="#262e33" stroke-width="6"/>
+    <path d="M144 514 L 192 448 L 240 514 Z" fill="#58c9b9" stroke="#262e33" stroke-width="6"/>
+    <path d="M250 514 L 284 472 L 306 514 Z" fill="#c0aede" stroke="#262e33" stroke-width="6"/>
+    <rect x="144" y="514" width="152" height="8" rx="4" fill="#b6e3f4"/>
+    <!-- recovered check -->
+    <circle cx="346" cy="526" r="17" fill="#58c9b9" stroke="#262e33" stroke-width="6"/>
+    <path d="M337 526 L 345 534 L 358 519" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>

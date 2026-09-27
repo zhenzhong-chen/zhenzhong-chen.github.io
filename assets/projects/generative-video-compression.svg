@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Generative Video Compression — flat Avataaars style -->
+  <rect width="900" height="600" fill="#ffdfbf"/>
+
+  <!-- content scaled slightly to widen top/bottom whitespace -->
+  <g transform="translate(46 26) scale(0.898)">
+
+  <!-- input video frame (top-left) -->
+  <g>
+    <rect x="70" y="60" width="300" height="220" rx="28" fill="#ffffff" stroke="#262e33" stroke-width="10"/>
+    <circle cx="306" cy="120" r="26" fill="#ffd76e" stroke="#262e33" stroke-width="7"/>
+    <path d="M90 238 L 170 138 L 238 238 Z" fill="#58c9b9" stroke="#262e33" stroke-width="7"/>
+    <path d="M198 238 L 266 166 L 342 238 Z" fill="#c0aede" stroke="#262e33" stroke-width="7"/>
+    <rect x="90" y="238" width="260" height="14" rx="7" fill="#b6e3f4"/>
+  </g>
+
+  <!-- dissolving squares flowing toward tokens -->
+  <g>
+    <rect x="392" y="150" width="26" height="26" rx="6" fill="#58c9b9"/>
+    <rect x="418" y="210" width="22" height="22" rx="6" fill="#c0aede"/>
+    <rect x="442" y="120" width="20" height="20" rx="6" fill="#ffd76e"/>
+    <rect x="446" y="252" width="24" height="24" rx="6" fill="#ff9838"/>
+    <rect x="452" y="182" width="16" height="16" rx="5" fill="#b6e3f4"/>
+    <circle cx="436" cy="288" r="7" fill="#262e33"/>
+    <circle cx="420" cy="96" r="6" fill="#262e33"/>
+  </g>
+
+  <!-- compact semantic tokens: the only thing transmitted -->
+  <g transform="translate(560 100)">
+    <rect x="0" y="0" width="230" height="120" rx="60" fill="#262e33"/>
+    <g>
+      <rect x="42" y="40" width="14" height="14" rx="4" fill="#58c9b9"/>
+      <rect x="72" y="40" width="14" height="14" rx="4" fill="#ffd76e"/>
+      <rect x="102" y="40" width="14" height="14" rx="4" fill="#c0aede"/>
+      <rect x="132" y="40" width="14" height="14" rx="4" fill="#ff9838"/>
+      <rect x="162" y="40" width="14" height="14" rx="4" fill="#ffffff"/>
+      <rect x="42" y="66" width="14" height="14" rx="4" fill="#ff9838"/>
+      <rect x="72" y="66" width="14" height="14" rx="4" fill="#58c9b9"/>
+      <rect x="102" y="66" width="14" height="14" rx="4" fill="#ffffff"/>
+      <rect x="132" y="66" width="14" height="14" rx="4" fill="#c0aede"/>
+      <rect x="162" y="66" width="14" height="14" rx="4" fill="#58c9b9"/>
+    </g>
+  </g>
+
+  <!-- diffusion sparkle -->
+  <g transform="translate(455 265)">
+    <path d="M40 0 L 52 28 L 80 40 L 52 52 L 40 80 L 28 52 L 0 40 L 28 28 Z" fill="#ff9838" stroke="#262e33" stroke-width="7"/>
+    <path d="M110 30 L 117 46 L 133 53 L 117 60 L 110 76 L 103 60 L 87 53 L 103 46 Z" fill="#ffd76e" stroke="#262e33" stroke-width="6"/>
+  </g>
+
+  <!-- noise dots: diffusion starts from scattered noise -->
+  <g fill="#262e33" opacity="0.5">
+    <circle cx="470" cy="400" r="6"/>
+    <circle cx="492" cy="440" r="5"/>
+    <circle cx="468" cy="478" r="7"/>
+    <circle cx="497" cy="512" r="5"/>
+    <circle cx="452" cy="516" r="4"/>
+    <circle cx="500" cy="366" r="4"/>
+  </g>
+
+  <!-- regenerated video frame (bottom-right, same size as input) -->
+  <g>
+    <rect x="530" y="330" width="300" height="220" rx="28" fill="#ffffff" stroke="#262e33" stroke-width="10" stroke-dasharray="20 14"/>
+    <circle cx="766" cy="390" r="26" fill="#ffd76e" stroke="#262e33" stroke-width="7"/>
+    <path d="M550 508 L 630 408 L 698 508 Z" fill="#58c9b9" stroke="#262e33" stroke-width="7"/>
+    <path d="M658 508 L 726 436 L 802 508 Z" fill="#c0aede" stroke="#262e33" stroke-width="7"/>
+    <rect x="550" y="508" width="260" height="14" rx="7" fill="#b6e3f4"/>
+    <g fill="#262e33" opacity="0.3">
+      <circle cx="556" cy="392" r="5"/>
+      <circle cx="550" cy="452" r="6"/>
+      <circle cx="566" cy="502" r="4.5"/>
+    </g>
+  </g>
+
+  <!-- bitrate comparison: traditional vs generative -->
+  <g transform="translate(110 440)">
+    <rect x="0" y="0" width="230" height="86" rx="24" fill="#ffffff" stroke="#262e33" stroke-width="8"/>
+    <!-- traditional: codec gear -> long bar -->
+    <g transform="translate(32 30)">
+      <g fill="#262e33">
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(45)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(90)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(135)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(180)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(225)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(270)"/>
+        <rect x="-2.5" y="-14" width="5" height="6" rx="2" transform="rotate(315)"/>
+      </g>
+      <circle r="9" fill="#262e33"/>
+      <circle r="3.5" fill="#ffffff"/>
+    </g>
+    <rect x="58" y="24" width="148" height="12" rx="6" fill="#c0aede"/>
+    <!-- generative: sparkle -> tiny bar -->
+    <path d="M30 48 L 34 56 L 42 60 L 34 64 L 30 72 L 26 64 L 18 60 L 26 56 Z" fill="#ffd76e" stroke="#262e33" stroke-width="4" stroke-linejoin="round"/>
+    <rect x="58" y="54" width="30" height="12" rx="6" fill="#58c9b9"/>
+  </g>
+  </g>
+</svg>

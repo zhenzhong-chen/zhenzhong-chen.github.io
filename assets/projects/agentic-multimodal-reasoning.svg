@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Agentic Multimodal Reasoning — flat Avataaars style -->
+  <rect width="900" height="600" fill="#c0aede"/>
+
+  <!-- content scaled slightly to widen top/bottom whitespace -->
+  <g transform="translate(15 4) scale(0.95)">
+
+  <!-- dotted connectors -->
+  <g stroke="#ffffff" stroke-width="6" stroke-dasharray="2 18" stroke-linecap="round" fill="none">
+    <path d="M240 180 C 330 200 360 250 400 285"/>
+    <path d="M660 180 C 570 200 540 250 500 285"/>
+    <path d="M210 430 C 300 420 350 380 395 345"/>
+    <path d="M690 430 C 600 420 550 380 505 345"/>
+  </g>
+
+  <!-- floating icon: eye (vision) -->
+  <g transform="translate(150 90)">
+    <rect x="0" y="0" width="180" height="130" rx="26" fill="#ffffff"/>
+    <path d="M40 65 C 65 30 115 30 140 65 C 115 100 65 100 40 65 Z" fill="#ffdfbf" stroke="#262e33" stroke-width="8"/>
+    <circle cx="90" cy="65" r="24" fill="#262e33"/>
+    <circle cx="97" cy="58" r="8" fill="#ffffff"/>
+  </g>
+
+  <!-- floating icon: speech bubble (language) -->
+  <g transform="translate(570 80)">
+    <rect x="0" y="0" width="180" height="120" rx="26" fill="#ffdfbf"/>
+    <path d="M50 118 L 66 152 L 96 118 Z" fill="#ffdfbf"/>
+    <circle cx="60" cy="60" r="11" fill="#262e33"/>
+    <circle cx="95" cy="60" r="11" fill="#262e33"/>
+    <circle cx="130" cy="60" r="11" fill="#262e33"/>
+  </g>
+
+  <!-- floating icon: document (text) -->
+  <g transform="translate(115 340)">
+    <rect x="0" y="0" width="160" height="140" rx="24" fill="#ffd76e"/>
+    <g stroke="#262e33" stroke-width="10" stroke-linecap="round">
+      <line x1="36" y1="42" x2="124" y2="42"/>
+      <line x1="36" y1="72" x2="124" y2="72"/>
+      <line x1="36" y1="102" x2="96" y2="102"/>
+    </g>
+  </g>
+
+  <!-- floating icon: audio waveform -->
+  <g transform="translate(620 330)">
+    <rect x="0" y="0" width="180" height="140" rx="24" fill="#58c9b9"/>
+    <g stroke="#262e33" stroke-width="12" stroke-linecap="round">
+      <line x1="34" y1="58" x2="34" y2="82"/>
+      <line x1="62" y1="40" x2="62" y2="100"/>
+      <line x1="90" y1="26" x2="90" y2="114"/>
+      <line x1="118" y1="44" x2="118" y2="96"/>
+      <line x1="146" y1="60" x2="146" y2="80"/>
+    </g>
+  </g>
+
+  <!-- central agent robot -->
+  <g transform="translate(340 150)">
+    <!-- antenna -->
+    <line x1="110" y1="0" x2="110" y2="34" stroke="#262e33" stroke-width="10"/>
+    <circle cx="110" cy="-8" r="14" fill="#ff9838" stroke="#262e33" stroke-width="8"/>
+    <!-- head -->
+    <rect x="20" y="34" width="180" height="140" rx="44" fill="#ffffff" stroke="#262e33" stroke-width="10"/>
+    <!-- ears -->
+    <rect x="-4" y="84" width="28" height="44" rx="12" fill="#ff9838" stroke="#262e33" stroke-width="8"/>
+    <rect x="196" y="84" width="28" height="44" rx="12" fill="#ff9838" stroke="#262e33" stroke-width="8"/>
+    <!-- face screen -->
+    <rect x="48" y="62" width="124" height="86" rx="26" fill="#262e33"/>
+    <!-- happy eyes -->
+    <path d="M76 104 q 10 -16 20 0" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M124 104 q 10 -16 20 0" stroke="#ffffff" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- smile -->
+    <path d="M86 122 q 24 18 48 0" stroke="#58c9b9" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <!-- body -->
+    <rect x="52" y="182" width="116" height="90" rx="34" fill="#ffdfbf" stroke="#262e33" stroke-width="10"/>
+    <rect x="86" y="206" width="48" height="34" rx="10" fill="#58c9b9" stroke="#262e33" stroke-width="7"/>
+    <!-- arms -->
+    <path d="M52 210 Q 10 226 22 262" stroke="#262e33" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M168 210 Q 210 226 198 262" stroke="#262e33" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- chain-of-thought: step 1 -> 2 -> 3 -> answer -->
+  <g>
+    <!-- connectors with arrows -->
+    <g stroke="#262e33" stroke-width="7" stroke-linecap="round" fill="none">
+      <line x1="298" y1="515" x2="358" y2="515"/>
+      <line x1="418" y1="515" x2="478" y2="515"/>
+      <line x1="538" y1="515" x2="598" y2="515"/>
+    </g>
+    <g fill="#262e33">
+      <path d="M358 505 L 376 515 L 358 525 Z"/>
+      <path d="M478 505 L 496 515 L 478 525 Z"/>
+      <path d="M598 505 L 616 515 L 598 525 Z"/>
+    </g>
+    <!-- step nodes -->
+    <circle cx="270" cy="515" r="25" fill="#ffd76e" stroke="#262e33" stroke-width="7"/>
+    <circle cx="390" cy="515" r="25" fill="#ffdfbf" stroke="#262e33" stroke-width="7"/>
+    <circle cx="510" cy="515" r="25" fill="#b6e3f4" stroke="#262e33" stroke-width="7"/>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#262e33">
+      <text x="270" y="525">1</text>
+      <text x="390" y="525">2</text>
+      <text x="510" y="525">3</text>
+    </g>
+    <!-- answer node: lightbulb -->
+    <circle cx="648" cy="515" r="27" fill="#ffffff" stroke="#262e33" stroke-width="7"/>
+    <circle cx="648" cy="511" r="11" fill="#ffd76e" stroke="#262e33" stroke-width="5"/>
+    <rect x="643" y="521" width="10" height="7" rx="3" fill="#262e33"/>
+    <g stroke="#262e33" stroke-width="4" stroke-linecap="round">
+      <line x1="648" y1="492" x2="648" y2="496"/>
+      <line x1="633" y1="498" x2="636" y2="501"/>
+      <line x1="663" y1="498" x2="660" y2="501"/>
+    </g>
+  </g>
+  </g>
+</svg>
+
