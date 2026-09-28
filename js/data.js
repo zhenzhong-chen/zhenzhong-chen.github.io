@@ -42,7 +42,7 @@ const SITE = {
   news: [
     { date: "2026-09", tag: "Opening",   text: "We are recruiting students to the 2027 M.Sc./M.Eng.(2-year) programs — join us!" },
     { date: "2026-09", tag: "Honor",      text: "Our group won the championship in ECCV 2026 Challenge on Ultra-Low Bitrate Image Compression." },
-    { date: "2026-07", tag: "Standard",   text: "VL-DRF was adopted in JVET NNVC, as the first NN-based inter coding tool." },
+    { date: "2026-07", tag: "Standard",   text: "VL-DRF was adopted in JVET NNVC, as the first neural network-based inter coding tool." },
     { date: "2026-06", tag: "Honor",      text: "Our group won 4 championships in CVPR 2026 NTIRE." },
     { date: "2026-05", tag: "Honor",      text: "Our group won the championship in ISCAS 2026 Grand Challenge on Neural Network-based Video Coding." }
   ],
