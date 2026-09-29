@@ -90,16 +90,16 @@ const SITE = {
   },
   /* ── Current PhD students (names from zhenzhong-chen.github.io) ── */
   students: [
-    { name: "Junxi Zhang",   role: "Ph.D. Student, 2022 –",                                        image: "assets/avatars/junxi-zhang.svg" },
-    { name: "Hongchen Wei",  role: "Ph.D. Student, 2023 – · on leave @ Microsoft Research Asia",   image: "assets/avatars/hongchen-wei.svg" },
-    { name: "Wenzhuo Ma",    role: "Ph.D. Student, 2024 –",                                        image: "assets/avatars/wenzhuo-ma.svg" },
-    { name: "Nianxiang Fu",  role: "Ph.D. Student, 2025 – · on leave @ Tencent",              image: "assets/avatars/nianxiang-fu.svg" },
-    { name: "Jingyun Liu",   role: "Ph.D. Student, 2025 –",                                   image: "assets/avatars/jingyun-liu.svg" },
-    { name: "Yifei Wang",    role: "Ph.D. Student, 2026 –",                                        image: "assets/avatars/yifei-wang.svg" },
-    { name: "Yanxi He",      role: "Ph.D. Student, 2026 – · OEET Program (Huawei)",                image: "assets/avatars/yanxi-he.svg" },
-    { name: "Xingchen Yi",   role: "Ph.D. Student, 2027 – · OEET Program (Huawei)",                image: "assets/avatars/xingchen-yi.svg" },
-    { name: "Y. Gao",        role: "Incoming Ph.D. Student",                                       image: "assets/avatars/ygao.svg" },
-    { name: "J. Wang",       role: "Incoming Ph.D. Student",                                       image: "assets/avatars/j-wang.svg" }
+    { name: "Junxi Zhang",   role: "Ph.D. Student, 2022 –",   image: "assets/avatars/junxi-zhang.svg" },
+    { name: "Hongchen Wei",  role: "Ph.D. Student, 2023 –",   image: "assets/avatars/hongchen-wei.svg" },
+    { name: "Wenzhuo Ma",    role: "Ph.D. Student, 2024 –",   image: "assets/avatars/wenzhuo-ma.svg" },
+    { name: "Nianxiang Fu",  role: "Ph.D. Student, 2025 –",   image: "assets/avatars/nianxiang-fu.svg" },
+    { name: "Jingyun Liu",   role: "Ph.D. Student, 2025 –",   image: "assets/avatars/jingyun-liu.svg" },
+    { name: "Yifei Wang",    role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yifei-wang.svg" },
+    { name: "Yanxi He",      role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yanxi-he.svg" },
+    { name: "Xingchen Yi",   role: "Ph.D. Student, 2027 –",   image: "assets/avatars/xingchen-yi.svg" },
+    { name: "Y. Gao",        role: "Incoming Ph.D. Student",  image: "assets/avatars/ygao.svg" },
+    { name: "J. Wang",       role: "Incoming Ph.D. Student",  image: "assets/avatars/j-wang.svg" }
   ],
   /* ── PhD alumni (line 1: name + year; line 2: placement) ── */
   phdAlumni: [
