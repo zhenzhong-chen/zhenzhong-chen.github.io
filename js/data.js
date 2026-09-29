@@ -30,9 +30,9 @@ const SITE = {
   projects: [
     { title: "Agentic Multimodal Reasoning",      desc: "Develop multimodal reasoning agents to tackle real-world problems.", image: "assets/projects/agentic-multimodal-reasoning.svg",
       detail: { text: "", references: [] } },   /* Details popup: text (blank line = new paragraph, inline HTML OK); references (each item may contain <a> links) */
-    { title: "Image & Video Coding Standards",    desc: "Develop deep-learning-based technologies to boost the image & video coding performance.", image: "assets/projects/image-video-coding-standards.svg",
-      detail: { text: "", references: [] } },
     { title: "Generative Video Compression",      desc: "Develop diffusion-based video compression for extremely low bit rate video communications.", image: "assets/projects/generative-video-compression.svg",
+      detail: { text: "", references: [] } },
+    { title: "Image & Video Coding Standards",    desc: "Develop deep-learning-based technologies to boost the image & video coding performance.", image: "assets/projects/image-video-coding-standards.svg",
       detail: { text: "", references: [] } },
     { title: "Quality of User Experience",        desc: "Develop subjective and objective methods and standards to measure QoS and QoE.", image: "assets/projects/quality-of-experience.svg",
       detail: { text: "", references: [] } }
