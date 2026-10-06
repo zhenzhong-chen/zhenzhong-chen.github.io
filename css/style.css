@@ -105,6 +105,20 @@ a{color:var(--ink);text-decoration:none}
 .modal-refs li::marker{color:var(--accent);font-weight:700}
 .modal-refs a{color:var(--accent);font-weight:600}
 .modal-refs a:hover{text-decoration:underline}
+/* ── Alumni modal (reuses .modal; wider panel so the 3-column list has room) ── */
+.alum-panel{max-width:920px}
+.alum-panel .modal-desc{margin-bottom:20px}
+/* Summary-only variant (no entry list, just the headline number) */
+.alum-note-panel{max-width:560px}
+.alum-note-panel .modal-body{padding-bottom:26px}
+.alum-note-panel .modal-desc{margin-bottom:0}
+/* In-card pointer to an external page (e.g. the IIP alumni list). The arrow
+   drifts up-right on hover to signal that the link opens in a new tab. */
+.modal-more{display:inline-flex;align-items:center;gap:6px;margin-top:15px;font-size:13.5px;
+  font-weight:600;color:var(--accent)}
+.modal-more:hover,.modal-more:focus-visible{text-decoration:underline}
+.modal-more span{font-size:12px;line-height:1;transition:transform .18s}
+.modal-more:hover span,.modal-more:focus-visible span{transform:translate(2px,-2px)}
 
 /* ── News ── */
 .news{background:var(--paper);padding:88px 0}
@@ -147,8 +161,27 @@ a{color:var(--ink);text-decoration:none}
 .person .avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 10px;display:block}
 .person .nm{font-size:14.5px;font-weight:600}
 .person .role{font-size:12px;color:var(--ink-2)}
+/* Initials avatar (used when a member has no photo yet) — same circle as .person .avatar,
+   declared after it so display:flex wins over the base display:block. */
+.person .avatar-initials{display:flex;align-items:center;justify-content:center;
+  background:#E9EAE7;color:#8A9099;font-size:19px;font-weight:700;letter-spacing:.5px;user-select:none}
 .sub-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-2);margin:0 0 18px}
 .people-grid + .sub-title{margin-top:40px}
+.people-grid + .alum-row{margin-top:40px}
+/* ── Alumni headings in one row, three equal columns ──
+   The second selector outranks the generic ".sub-title + .sub-title" spacing rule
+   further down, which would otherwise push cards 2 and 3 out of line. */
+.alum-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px}
+.alum-row .sub-title,.alum-row .sub-title + .sub-title{margin:0}
+/* ── Clickable section heading (opens a modal card instead of listing content inline) ── */
+.sub-title.is-clickable{cursor:pointer;display:flex;align-items:center;gap:9px;transition:color .18s}
+.sub-title.is-clickable:hover,.sub-title.is-clickable:focus-visible{color:var(--accent);outline:none}
+.sub-title.is-clickable .cnt{font-weight:600;letter-spacing:0;color:#A6ABB0;transition:color .18s}
+.sub-title.is-clickable .chev{font-size:14px;line-height:1;transition:transform .18s}
+.sub-title.is-clickable:hover .cnt,.sub-title.is-clickable:focus-visible .cnt{color:var(--accent)}
+.sub-title.is-clickable:hover .chev,.sub-title.is-clickable:focus-visible .chev{transform:translateX(3px)}
+/* consecutive clickable headings (e.g. Ph.D. Alumni / M.Sc.·M.Eng. Alumni) */
+.sub-title + .sub-title{margin-top:26px}
 .alum-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 48px}
 .alum{padding:6px 0;border-bottom:1px solid #E5E6E2}
 .alum .row1{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
@@ -190,6 +223,8 @@ footer{background:#0C0D10;color:#8B8F97;padding:56px 0;font-size:13.5px}
   .pub{grid-template-columns:1fr}
   .director{flex-direction:column;text-align:center}
   .alum-list{grid-template-columns:1fr;gap:0}
+  .alum-row{grid-template-columns:1fr;gap:0}
+  .alum-row .sub-title + .sub-title{margin-top:22px}
   .menu{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:10px 20px}
   .menu.open{display:flex}
   .nav-toggle{display:block}

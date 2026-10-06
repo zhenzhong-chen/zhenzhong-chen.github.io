@@ -101,26 +101,113 @@ $("pub-list").innerHTML = SITE.pubs.map(p => {
   </div>`;
 }).join("");
 
-/* Team — photo avatars; falls back to the shared placeholder headshot */
-const AVATAR_PLACEHOLDER = "https://zhenzhong-chen.github.io/bio.jpeg";
-const avatarImg = p => `<img class="avatar" src="${p.image || AVATAR_PLACEHOLDER}" alt="${p.name}" onerror="this.style.display='none'">`;
+/* Team — photo avatars. A member without a photo gets an initials avatar instead:
+   no network dependency, and it never shows the wrong face. */
+const initialsOf = n => n.trim().split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+const avatarImg = p => p.image
+  ? `<img class="avatar" src="${p.image}" alt="${p.name}" onerror="this.style.display='none'">`
+  : `<div class="avatar avatar-initials" aria-hidden="true">${initialsOf(p.name)}</div>`;
 const d = SITE.director;
 $("director").innerHTML = `
   ${avatarImg(d)}
   <div><h3>${d.name}</h3><div class="role">${d.role}</div><p>${d.bio}</p></div>`;
-$("people-grid").innerHTML = SITE.students.map(p => `
+const personCard = p => `
   <div class="person">
     ${avatarImg(p)}
     <div class="nm">${p.name}</div>
     <div class="role">${p.role}</div>
-  </div>`).join("");
+  </div>`;
+const renderPeople = (gridId, list) => {
+  const box = $(gridId);
+  if (box) box.innerHTML = (list || []).map(personCard).join("");
+};
+renderPeople("people-grid", SITE.students);            /* Ph.D. Students */
+renderPeople("research-grid", SITE.researchStudents);  /* Research Students */
 
-/* PhD alumni — line 1: name + year; line 2: placement & co-supervisor */
-$("alum-list").innerHTML = SITE.phdAlumni.map(a => `
-  <div class="alum">
-    <div class="row1"><span class="nm">${a.name}</span><span class="yr">${a.year}</span></div>
-    <div class="note">${a.note}</div>
-  </div>`).join("");
+/* ── Alumni groups ──
+   Alumni lists are not rendered inline: each section heading (e.g. "Ph.D. Alumni",
+   "M.Sc./M.Eng. Alumni") opens its own modal card.
+   Entry: { name, year, degree?, note } — line 1: name + year (+ degree), line 2: placement */
+function renderAlumniGroup({ toggleId, countId, modalId, title, desc, list = [], count, link }) {
+  const toggle = $(toggleId);
+  if (!toggle) return;                      /* heading not present in index.html */
+
+  /* Badge shows the explicit `count` when given, otherwise the number of entries. */
+  const total = typeof count === "number" ? count : list.length;
+  const badge = countId ? $(countId) : null;   /* some groups show no badge */
+  if (badge) badge.textContent = `(${total})`;
+
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.id = modalId;
+  modal.innerHTML = `
+    <div class="modal-panel ${list.length ? "alum-panel" : "alum-note-panel"}" role="dialog" aria-modal="true" aria-labelledby="${modalId}-title">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="modal-body">
+        <h3 id="${modalId}-title">${title}</h3>
+        <p class="modal-desc" id="${modalId}-desc"></p>
+        ${link ? `<a class="modal-more" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.text}<span aria-hidden="true">↗</span></a>` : ""}
+        <div class="alum-list" id="${modalId}-list"></div>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+
+  $(`${modalId}-desc`).textContent = desc;
+  $(`${modalId}-list`).innerHTML = list.map(a => `
+    <div class="alum">
+      <div class="row1"><span class="nm">${a.name}</span><span class="yr">${a.year}${a.degree ? " · " + a.degree : ""}</span></div>
+      <div class="note">${a.note}</div>
+    </div>`).join("");
+
+  const open = () => {
+    modal.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+  const close = () => {
+    modal.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+  toggle.addEventListener("click", open);
+  toggle.addEventListener("keydown", e => {   /* Enter / Space for keyboard users */
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+  });
+  modal.addEventListener("click", e => {
+    if (e.target === modal || e.target.closest(".modal-close")) close();
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+}
+
+/* Ph.D. alumni */
+const phdAlumni = SITE.phdAlumni || [];
+renderAlumniGroup({
+  toggleId: "alum-toggle", countId: "alum-count", modalId: "alum-modal",
+  title: "Ph.D. Alumni", desc: `${phdAlumni.length} Ph.D. graduates.`, list: phdAlumni
+});
+
+/* M.Sc. / M.Eng. alumni — same modal pattern as the Ph.D. group, but the card
+   carries the headline number only: no individual entries are listed here.
+   The number and the "see the full list" link both come from data.js. */
+const msCount = SITE.msAlumniCount || 0;
+renderAlumniGroup({
+  toggleId: "ms-alum-toggle", countId: "ms-alum-count", modalId: "ms-alum-modal",
+  title: "M.Sc./M.Eng. Alumni",
+  desc: `${msCount} M.Sc./M.Eng. graduates supervised or co-supervised.`,
+  count: msCount,
+  list: [],
+  link: { href: SITE.alumniSource, text: "Full list on the IIP website" }
+});
+
+/* Other alumni (postdocs, undergraduates, interns, visitors, …) — summary card
+   only, with a link out to the IIP alumni page for the full list. */
+renderAlumniGroup({
+  toggleId: "other-alum-toggle", countId: null, modalId: "other-alum-modal",
+  title: "Other Alumni",
+  desc: SITE.otherAlumniNote,
+  list: [],
+  link: { href: SITE.alumniSource, text: "Full list on the IIP website" }
+});
 
 /* Join us + Contact */
 $("join-list").innerHTML = SITE.join.map(j => `<li>${j}</li>`).join("");

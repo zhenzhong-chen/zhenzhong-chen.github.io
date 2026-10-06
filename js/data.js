@@ -101,6 +101,44 @@ const SITE = {
     { name: "Y. Gao",        role: "Incoming Ph.D. Student",  image: "assets/avatars/ygao.svg" },
     { name: "J. Wang",       role: "Incoming Ph.D. Student",  image: "assets/avatars/j-wang.svg" }
   ],
+  /* ── Research students (M.Sc.) ──
+     Added 2026-10-04. The site displays the romanised name; `cn` keeps the Chinese
+     name exactly as supplied, so the reading can be checked or switched later.
+     No photos supplied yet → these cards show an initials avatar automatically;
+     drop a file into assets/avatars/ and add an `image` field to use a real photo. */
+  researchStudents: [
+    /* Cartoon avatars were generated from the members' photos on
+       https://iip.whu.edu.cn/about/people.html (2026-10-04).
+       Members without a photo there share assets/avatars/placeholder-cartoon.svg. */
+    { name: "Yixuan Ye",     cn: "叶亦轩", role: "M.Sc. Student",   image: "assets/avatars/yixuan-ye.png" },
+    { name: "Zhihong Tan",   cn: "谈治宏", role: "M.Sc. Student",   image: "assets/avatars/zhihong-tan.png" },
+    { name: "Wenzhuo Zhang", cn: "张文卓", role: "M.Sc. Student",   image: "assets/avatars/wenzhuo-zhang.png" },
+    { name: "Xinxin Chen",   cn: "陈鑫鑫", role: "M.Sc. Student",   image: "assets/avatars/xinxin-chen.png" },
+    { name: "Qizhi Huang",   cn: "黄启智", role: "M.Sc. Student",   image: "assets/avatars/qizhi-huang.png" },
+    { name: "Tao Liu",       cn: "刘涛",   role: "M.Sc. Student",   image: "assets/avatars/tao-liu.png" },
+    { name: "Yanhuang Liu",  cn: "刘炎黄", role: "M.Sc. Student",   image: "assets/avatars/yanhuang-liu.png" },
+    { name: "Luyi Qin",      cn: "覃露怡", role: "M.Eng. Student",  image: "assets/avatars/luyi-qin.png" },
+    { name: "Haodong Qu",    cn: "曲浩栋", role: "M.Sc. Student",   image: "assets/avatars/haodong-qu.png" },
+    { name: "Zhihan Zhang",  cn: "张智涵", role: "M.Sc. Student",   image: "assets/avatars/zhihan-zhang.png" },
+    { name: "Xianhe Tang",   cn: "唐先河", role: "M.Sc. Student",   image: "assets/avatars/xianhe-tang.png" },
+    { name: "Yiming Chen",   cn: "陈一鸣", role: "M.Sc. Student",   image: "assets/avatars/yiming-chen.png" },
+    { name: "Tian Shu",      cn: "舒田",   role: "M.Sc. Student",   image: "assets/avatars/tian-shu.png" },
+    { name: "Wenqiang Xiao", cn: "肖文强", role: "M.Sc. Student",   image: "assets/avatars/wenqiang-xiao.png" },
+    { name: "Junying Su",    cn: "苏莙莹", role: "M.Eng. Student",  image: "assets/avatars/junying-su.png" },
+    { name: "Ruiyi Liu",     cn: "刘芮屹", role: "M.Eng. Student",  image: "assets/avatars/ruiyi-liu.png" },
+    /* UROP undergraduates, added 2026-10-04 / 2026-10-05. All current entries have a
+       cartoon avatar generated from a supplied photo. Removed 2026-10-06 (no photo
+       supplied, still on the placeholder avatar): 赵振宇, 周毅康, 张舒庆, 林宸宇 —
+       re-add a row with an `image` path once their photos arrive. */
+    { name: "Qinqi Huang",   cn: "黄沁琦", role: "UROP Student",    image: "assets/avatars/qinqi-huang.png" },
+    { name: "Yukang Liang",  cn: "梁宇康", role: "UROP Student",    image: "assets/avatars/yukang-liang.png" },
+    { name: "Bingkun Liu",   cn: "刘柄昆", role: "UROP Student",    image: "assets/avatars/bingkun-liu.png" },
+    { name: "Hanshen Shi",   cn: "施瀚森", role: "UROP Student",    image: "assets/avatars/hanshen-shi.png" },
+    { name: "Tongqi Guo",    cn: "郭桐绮", role: "UROP Student",    image: "assets/avatars/tongqi-guo.png" },
+    /* Closing card: collage of member avatars (assets/avatars/more-coming.png,
+       built 2026-10-06 from 10 of the avatars above) — not a real member. */
+    { name: "More to come", role: "…", image: "assets/avatars/more-coming.png" }
+  ],
   /* ── PhD alumni (line 1: name + year; line 2: placement) ── */
   phdAlumni: [
     { name: "Yingxue Zhang",  year: "2020", note: "Tianjin University of Science and Technology" },
@@ -122,6 +160,21 @@ const SITE = {
     { name: "Jing Yi",        year: "2025", note: "Tencent (Qingyun Program)" },
     { name: "Yuantong Zhang", year: "2026", note: "Tencent (Qingyun Program)" }
   ],
+  /* ── M.Sc./M.Eng. alumni ──
+     Headline number only: the "M.Sc./M.Eng. Alumni" card states how many
+     M.Sc./M.Eng. graduates the group has supervised or co-supervised, without
+     listing individual names on this site.
+     71 = rows with degree "M.Sc." / "M.Eng." (incl. (CS) / (Joint)) in table 1 of
+     https://iip.whu.edu.cn/about/alumni.html — 55 M.Sc. + 16 M.Eng., 2015–2026
+     (as of 2026-10-04). Update this number if the source page changes.
+     Full entries, if ever needed, are in ms-alumni-backup.json (project root). */
+  msAlumniCount: 71,
+  /* Alumni page of the IIP site — linked from the M.Sc./M.Eng. and Other cards. */
+  alumniSource: "https://iip.whu.edu.cn/about/alumni.html",
+  /* ── Other alumni ──
+     Summary card only (no individual listing): the kinds of people who also
+     spent time with the group but are not Ph.D. / M.Sc./M.Eng. graduates. */
+  otherAlumniNote: "Former Postdoc Fellows, Undergraduate Students, Research Interns/Assistants, Visitors, etc.",
 
   /* ── Join us ── */
   join: [

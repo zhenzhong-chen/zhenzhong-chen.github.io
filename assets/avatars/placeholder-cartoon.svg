@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Placeholder avatar: flat cartoon silhouette on the lab's light-blue circle.
+     Used for members without a photo (same style as director-cartoon.png). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
+  <circle cx="140" cy="140" r="140" fill="#8FC6EF"/>
+  <g fill="#FFFFFF" opacity="0.92">
+    <circle cx="140" cy="108" r="46"/>
+    <path d="M62 236a78 78 0 0 1 156 0z"/>
+  </g>
+</svg>
