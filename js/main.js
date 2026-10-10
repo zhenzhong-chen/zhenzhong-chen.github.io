@@ -5,6 +5,25 @@
 
 const $ = id => document.getElementById(id);
 
+/* ── UI strings ──
+   Defaults are English; a translated data file (e.g. js/data-cn.js) overrides any
+   subset of them through SITE.ui, so both language versions share this renderer. */
+const UI = Object.assign({
+  toBeAdded:      "To be added",
+  references:     "References",
+  placeholderImg: "Project image (placeholder)",
+  phdAlumniTitle: "Ph.D. Alumni",
+  phdAlumniDesc:  "{n} Ph.D. graduates.",
+  msAlumniTitle:  "M.Sc./M.Eng. Alumni",
+  msAlumniDesc:   "{n} M.Sc./M.Eng. graduates supervised or co-supervised.",
+  otherAlumniTitle: "Other Alumni",
+  fullList:       "Full list on the IIP website",
+  email:          "Email",
+  phone:          "Phone",
+  wechat:         "WeChat",
+  postcode:       "Postcode"
+}, SITE.ui || {});
+
 /* Top bar & title (use meta.title directly; avoids name/title being duplicated) */
 document.title = SITE.meta.title;
 $("topbar-affiliation").textContent = SITE.meta.affiliation;
@@ -24,7 +43,7 @@ if (SITE.hero.image) $("hero-media").innerHTML = `<img src="${SITE.hero.image}" 
 /* Project cards */
 $("project-grid").innerHTML = SITE.projects.map((g, i) => `
   <div class="gcard">
-    <div class="thumb">${g.image ? `<img src="${g.image}">` : "Project image (placeholder)"}</div>
+    <div class="thumb">${g.image ? `<img src="${g.image}">` : UI.placeholderImg}</div>
     <div class="body"><h3>${g.title}</h3><p>${g.desc}</p>
       <a class="textlink proj-detail" href="#" data-idx="${i}">Details →</a></div>
   </div>`).join("");
@@ -48,18 +67,18 @@ document.body.appendChild(modal);
 function openProjectModal(g) {
   $("modal-thumb").innerHTML = g.image
     ? `<img src="${g.image}" alt="${g.title}">`
-    : `<span class="modal-ph">Project image (placeholder)</span>`;
+    : `<span class="modal-ph">${UI.placeholderImg}</span>`;
   $("modal-title").textContent = g.title;
   $("modal-desc").textContent = g.desc;
   const raw = (g.detail && g.detail.text) || "";
   $("modal-text").innerHTML = raw.trim()
     ? raw.trim().split(/\n\s*\n/).map(p => `<p>${p}</p>`).join("")   /* blank line = new paragraph; inline HTML allowed */
-    : `<p>To be added</p>`;
+    : `<p>${UI.toBeAdded}</p>`;
   /* Reference list (numbered, citation style; each item may contain <a> links) */
   const refs = (g.detail && g.detail.references) || [];
   const refsBox = $("modal-refs");
   if (refs.length) {
-    refsBox.innerHTML = `<h4>References</h4><ol>${refs.map(r => `<li>${r}</li>`).join("")}</ol>`;
+    refsBox.innerHTML = `<h4>${UI.references}</h4><ol>${refs.map(r => `<li>${r}</li>`).join("")}</ol>`;
     refsBox.style.display = "block";
   } else refsBox.style.display = "none";
   modal.classList.add("open");
@@ -80,7 +99,7 @@ document.querySelectorAll(".proj-detail").forEach(a =>
 $("news-list").innerHTML = SITE.news.map(n => `
   <div class="news-item">
     <span class="date">${n.date}</span>
-    <span class="tag tag-${(n.tag || "").toLowerCase()}">${n.tag}</span>
+    <span class="tag tag-${((n.cls || n.tag || "").toLowerCase())}">${n.tag}</span>
     <span class="txt">${n.text}</span>
   </div>`).join("");
 
@@ -183,7 +202,9 @@ function renderAlumniGroup({ toggleId, countId, modalId, title, desc, list = [],
 const phdAlumni = SITE.phdAlumni || [];
 renderAlumniGroup({
   toggleId: "alum-toggle", countId: "alum-count", modalId: "alum-modal",
-  title: "Ph.D. Alumni", desc: `${phdAlumni.length} Ph.D. graduates.`, list: phdAlumni
+  title: UI.phdAlumniTitle,
+  desc: UI.phdAlumniDesc.replace("{n}", phdAlumni.length),
+  list: phdAlumni
 });
 
 /* M.Sc. / M.Eng. alumni — same modal pattern as the Ph.D. group, but the card
@@ -192,34 +213,34 @@ renderAlumniGroup({
 const msCount = SITE.msAlumniCount || 0;
 renderAlumniGroup({
   toggleId: "ms-alum-toggle", countId: "ms-alum-count", modalId: "ms-alum-modal",
-  title: "M.Sc./M.Eng. Alumni",
-  desc: `${msCount} M.Sc./M.Eng. graduates supervised or co-supervised.`,
+  title: UI.msAlumniTitle,
+  desc: UI.msAlumniDesc.replace("{n}", msCount),
   count: msCount,
   list: [],
-  link: { href: SITE.alumniSource, text: "Full list on the IIP website" }
+  link: { href: SITE.alumniSource, text: UI.fullList }
 });
 
 /* Other alumni (postdocs, undergraduates, interns, visitors, …) — summary card
    only, with a link out to the IIP alumni page for the full list. */
 renderAlumniGroup({
   toggleId: "other-alum-toggle", countId: null, modalId: "other-alum-modal",
-  title: "Other Alumni",
+  title: UI.otherAlumniTitle,
   desc: SITE.otherAlumniNote,
   list: [],
-  link: { href: SITE.alumniSource, text: "Full list on the IIP website" }
+  link: { href: SITE.alumniSource, text: UI.fullList }
 });
 
 /* Join us + Contact */
 $("join-list").innerHTML = SITE.join.map(j => `<li>${j}</li>`).join("");
 const c = SITE.contact;
 $("contact-box").innerHTML = `
-  <p><b>Email</b><br>${c.email}</p>
-  <p><b>Phone</b><br>${c.phone}</p>
-  <p><b>WeChat</b><br>${c.wechat}</p>`;
+  <p><b>${UI.email}</b><br>${c.email}</p>
+  <p><b>${UI.phone}</b><br>${c.phone}</p>
+  <p><b>${UI.wechat}</b><br>${c.wechat}</p>`;
 
 /* Footer */
 $("fbrand").textContent = `${SITE.meta.name} · ${SITE.meta.en}`;
-$("footer-addr").textContent = `${SITE.meta.address} · Postcode: ${SITE.meta.postcode}`;
+$("footer-addr").textContent = `${SITE.meta.address} · ${UI.postcode}: ${SITE.meta.postcode}`;
 $("footer-copy").textContent = SITE.meta.copyright;
 
 /* Nav highlighting + back to top */

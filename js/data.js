@@ -85,7 +85,7 @@ const SITE = {
   director: {
     name: "Prof. Zhenzhong Chen",
     role: "Lab Director",
-    bio: "Zhenzhong Chen is a Professor at Wuhan University. His research interests include image and video processing, computer vision, MLLM, etc. He has published more than 300 international journal or conference papers. He serves as Senior Area Editor of IEEE TIP and IEEE TCSVT. He has been an editor of ITU-T SG12, VQEG board member and IMG Group Co-Chair, and Co-chair of China AVS Quality Assessment working group. He has developed ITU-T P.919/P.940/P.UXV, and contributed over 300 technical proposals to HEVC/H.265, VVC/H.266, MPEG VCM/FCM, JPEG-AI, AVS1/2/3, IEEE 1857, etc. He was a recipient of the CUHK Young Scholars Dissertation Award, the CUHK Faculty of Engineering Outstanding Ph.D. Thesis Award, Microsoft Fellowship, Shenzhen Patent Award, etc.",
+    bio: "Zhenzhong Chen is a Professor at Wuhan University. His research interests include image and video processing, computer vision, MLLM, etc. He has published more than 300 international journal or conference papers. He serves as Senior Area Editor of IEEE TIP and IEEE TCSVT. He also serves as an editor of ITU-T SG12, a VQEG board member and IMG Group Co-Chair, and Co-chair of the China AVS Quality Assessment working group. He developed ITU-T P.919/P.940/P.UXV, and contributed over 300 technical proposals to HEVC/H.265, VVC/H.266, MPEG VCM/FCM, JPEG-AI, AVS1/2/3, IEEE 1857, etc. He was a recipient of the CUHK Young Scholars Dissertation Award, the CUHK Faculty of Engineering Outstanding Ph.D. Thesis Award, Microsoft Fellowship, Shenzhen Patent Award, etc.",
     image: "assets/avatars/director-cartoon.png"   /* Cartoon avatar generated from his portrait; swap for a real photo if needed */
   },
   /* ── Current PhD students (names from zhenzhong-chen.github.io) ── */
@@ -98,8 +98,8 @@ const SITE = {
     { name: "Yifei Wang",    role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yifei-wang.svg" },
     { name: "Yanxi He",      role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yanxi-he.svg" },
     { name: "Xingchen Yi",   role: "Ph.D. Student, 2027 –",   image: "assets/avatars/xingchen-yi.svg" },
-    { name: "Y. Gao",        role: "Incoming Ph.D. Student",  image: "assets/avatars/ygao.svg" },
-    { name: "J. Wang",       role: "Incoming Ph.D. Student",  image: "assets/avatars/j-wang.svg" }
+    { name: "Y. Gao",        role: "Ph.D. Student, 2027 –",  image: "assets/avatars/ygao.svg" },
+    { name: "J. Wang",       role: "Ph.D. Student, 2027 –",  image: "assets/avatars/j-wang.svg" }
   ],
   /* ── Research students (M.Sc.) ──
      Added 2026-10-04. The site displays the romanised name; `cn` keeps the Chinese
@@ -126,15 +126,18 @@ const SITE = {
     { name: "Wenqiang Xiao", cn: "肖文强", role: "M.Sc. Student",   image: "assets/avatars/wenqiang-xiao.png" },
     { name: "Junying Su",    cn: "苏莙莹", role: "M.Eng. Student",  image: "assets/avatars/junying-su.png" },
     { name: "Ruiyi Liu",     cn: "刘芮屹", role: "M.Eng. Student",  image: "assets/avatars/ruiyi-liu.png" },
-    /* UROP undergraduates, added 2026-10-04 / 2026-10-05. All current entries have a
-       cartoon avatar generated from a supplied photo. Removed 2026-10-06 (no photo
-       supplied, still on the placeholder avatar): 赵振宇, 周毅康, 张舒庆, 林宸宇 —
-       re-add a row with an `image` path once their photos arrive. */
+    /* UROP undergraduates, added 2026-10-04 / 2026-10-05 / 2026-10-10. All current entries have a
+       cartoon avatar generated from a supplied photo (赵振宇/周毅康/张舒庆/林宸宇 re-added
+       2026-10-10 once their photos arrived in ~/Downloads/硕士生人像 2). */
     { name: "Qinqi Huang",   cn: "黄沁琦", role: "UROP Student",    image: "assets/avatars/qinqi-huang.png" },
     { name: "Yukang Liang",  cn: "梁宇康", role: "UROP Student",    image: "assets/avatars/yukang-liang.png" },
     { name: "Bingkun Liu",   cn: "刘柄昆", role: "UROP Student",    image: "assets/avatars/bingkun-liu.png" },
     { name: "Hanshen Shi",   cn: "施瀚森", role: "UROP Student",    image: "assets/avatars/hanshen-shi.png" },
     { name: "Tongqi Guo",    cn: "郭桐绮", role: "UROP Student",    image: "assets/avatars/tongqi-guo.png" },
+    { name: "Zhenyu Zhao",   cn: "赵振宇", role: "UROP Student",    image: "assets/avatars/zhenyu-zhao.png" },
+    { name: "Yikang Zhou",   cn: "周毅康", role: "UROP Student",    image: "assets/avatars/yikang-zhou.png" },
+    { name: "Shuqing Zhang", cn: "张舒庆", role: "UROP Student",    image: "assets/avatars/shuqing-zhang.png" },
+    { name: "Chenyu Lin",    cn: "林宸宇", role: "UROP Student",    image: "assets/avatars/chenyu-lin.png" },
     /* Closing card: collage of member avatars (assets/avatars/more-coming.png,
        built 2026-10-06 from 10 of the avatars above) — not a real member. */
     { name: "More to come", role: "…", image: "assets/avatars/more-coming.png" }
