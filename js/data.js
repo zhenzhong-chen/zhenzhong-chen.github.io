@@ -98,8 +98,8 @@ const SITE = {
     { name: "Yifei Wang",    role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yifei-wang.svg" },
     { name: "Yanxi He",      role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yanxi-he.svg" },
     { name: "Xingchen Yi",   role: "Ph.D. Student, 2027 –",   image: "assets/avatars/xingchen-yi.svg" },
-    { name: "Y. Gao",        role: "Ph.D. Student, 2027 –",  image: "assets/avatars/ygao.svg" },
-    { name: "J. Wang",       role: "Ph.D. Student, 2027 –",  image: "assets/avatars/j-wang.svg" }
+    { name: "Y. Gao",        role: "Incoming ...",  image: "assets/avatars/ygao.svg" },
+    { name: "J. Wang",       role: "Incoming ...",  image: "assets/avatars/j-wang.svg" }
   ],
   /* ── Research students (M.Sc.) ──
      Added 2026-10-04. The site displays the romanised name; `cn` keeps the Chinese
