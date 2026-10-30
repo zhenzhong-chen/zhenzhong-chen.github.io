@@ -124,7 +124,6 @@ const SITE = {
     { name: "舒田",   en: "Tian Shu",      role: "硕士研究生",   image: "assets/avatars/tian-shu.png" },
     { name: "肖文强", en: "Wenqiang Xiao", role: "硕士研究生",   image: "assets/avatars/wenqiang-xiao.png" },
     { name: "苏莙莹", en: "Junying Su",    role: "硕士研究生", image: "assets/avatars/junying-su.png" },
-    { name: "刘芮屹", en: "Ruiyi Liu",     role: "硕士研究生", image: "assets/avatars/ruiyi-liu.png" },
     { name: "黄沁琦", en: "Qinqi Huang",   role: "本科生（UROP）", image: "assets/avatars/qinqi-huang.png" },
     { name: "梁宇康", en: "Yukang Liang",  role: "本科生（UROP）", image: "assets/avatars/yukang-liang.png" },
     { name: "刘柄昆", en: "Bingkun Liu",   role: "本科生（UROP）", image: "assets/avatars/bingkun-liu.png" },

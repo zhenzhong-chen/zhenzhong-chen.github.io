@@ -125,7 +125,6 @@ const SITE = {
     { name: "Tian Shu",      cn: "舒田",   role: "M.Sc. Student",   image: "assets/avatars/tian-shu.png" },
     { name: "Wenqiang Xiao", cn: "肖文强", role: "M.Sc. Student",   image: "assets/avatars/wenqiang-xiao.png" },
     { name: "Junying Su",    cn: "苏莙莹", role: "M.Eng. Student",  image: "assets/avatars/junying-su.png" },
-    { name: "Ruiyi Liu",     cn: "刘芮屹", role: "M.Eng. Student",  image: "assets/avatars/ruiyi-liu.png" },
     /* UROP undergraduates, added 2026-10-04 / 2026-10-05 / 2026-10-10. All current entries have a
        cartoon avatar generated from a supplied photo (赵振宇/周毅康/张舒庆/林宸宇 re-added
        2026-10-10 once their photos arrived in ~/Downloads/硕士生人像 2). */
