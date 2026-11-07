@@ -103,7 +103,8 @@ const SITE = {
     { name: "何堰玺", en: "Yanxi He",      role: "博士研究生，2026 –",   image: "assets/avatars/yanxi-he.svg" },
     { name: "Xingchen Yi", en: "Xingchen Yi", role: "博士研究生，2027 –", image: "assets/avatars/xingchen-yi.svg" },
     { name: "Y. Gao",  en: "Y. Gao",  role: "", image: "assets/avatars/ygao.svg" },
-    { name: "J. Wang", en: "J. Wang", role: "", image: "assets/avatars/j-wang.svg" }
+    { name: "J. Wang", en: "J. Wang", role: "", image: "assets/avatars/j-wang.svg" },
+    { name: "Q. Huang", en: "Q. Huang", role: "", image: "assets/avatars/qizhi-huang.png" },
   ],
 
   /* ── 在读研究生 / 本科生（UROP）──
@@ -113,7 +114,6 @@ const SITE = {
     { name: "谈治宏", en: "Zhihong Tan",   role: "硕士研究生",   image: "assets/avatars/zhihong-tan.png" },
     { name: "张文卓", en: "Wenzhuo Zhang", role: "硕士研究生",   image: "assets/avatars/wenzhuo-zhang.png" },
     { name: "陈鑫鑫", en: "Xinxin Chen",   role: "硕士研究生",   image: "assets/avatars/xinxin-chen.png" },
-    { name: "黄启智", en: "Qizhi Huang",   role: "硕士研究生",   image: "assets/avatars/qizhi-huang.png" },
     { name: "刘涛",   en: "Tao Liu",       role: "硕士研究生",   image: "assets/avatars/tao-liu.png" },
     { name: "刘炎黄", en: "Yanhuang Liu",  role: "硕士研究生",   image: "assets/avatars/yanhuang-liu.png" },
     { name: "覃露怡", en: "Luyi Qin",      role: "硕士研究生", image: "assets/avatars/luyi-qin.png" },

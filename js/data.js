@@ -99,7 +99,8 @@ const SITE = {
     { name: "Yanxi He",      role: "Ph.D. Student, 2026 –",   image: "assets/avatars/yanxi-he.svg" },
     { name: "Xingchen Yi",   role: "Ph.D. Student, 2027 –",   image: "assets/avatars/xingchen-yi.svg" },
     { name: "Y. Gao",        role: "Incoming ...",  image: "assets/avatars/ygao.svg" },
-    { name: "J. Wang",       role: "Incoming ...",  image: "assets/avatars/j-wang.svg" }
+    { name: "J. Wang",       role: "Incoming ...",  image: "assets/avatars/j-wang.svg" },
+    { name: "Q. Huang", role: "Incoming ...", image: "assets/avatars/qizhi-huang.png" },
   ],
   /* ── Research students (M.Sc.) ──
      Added 2026-10-04. The site displays the romanised name; `cn` keeps the Chinese
@@ -114,7 +115,6 @@ const SITE = {
     { name: "Zhihong Tan",   cn: "谈治宏", role: "M.Sc. Student",   image: "assets/avatars/zhihong-tan.png" },
     { name: "Wenzhuo Zhang", cn: "张文卓", role: "M.Sc. Student",   image: "assets/avatars/wenzhuo-zhang.png" },
     { name: "Xinxin Chen",   cn: "陈鑫鑫", role: "M.Sc. Student",   image: "assets/avatars/xinxin-chen.png" },
-    { name: "Qizhi Huang",   cn: "黄启智", role: "M.Sc. Student",   image: "assets/avatars/qizhi-huang.png" },
     { name: "Tao Liu",       cn: "刘涛",   role: "M.Sc. Student",   image: "assets/avatars/tao-liu.png" },
     { name: "Yanhuang Liu",  cn: "刘炎黄", role: "M.Sc. Student",   image: "assets/avatars/yanhuang-liu.png" },
     { name: "Luyi Qin",      cn: "覃露怡", role: "M.Eng. Student",  image: "assets/avatars/luyi-qin.png" },
